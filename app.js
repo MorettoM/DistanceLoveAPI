@@ -1,11 +1,14 @@
 var express = require('express');
 
+// App setup
 var app = express();
-var http = require( "http" ).createServer( app );
-var io = require( "socket.io" )( http );
-http.listen(8080, "https://distance-love.herokuapp.com");
+var socket = require('socket.io')
 
+var server = app.listen(4000, function(){
+    console.log('listening for requests on port 4000,');
+});
 
-io.on('connection',function(socket){  
-    console.log("A user is connected");
+let io = socket(server)
+io.on('connection', function(socket){
+  console.log(`${socket.id} is connected`);
 });
