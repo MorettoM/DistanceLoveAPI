@@ -3,8 +3,7 @@ var express = require('express');
 var app = express();
 
 const server = app.listen(8000, () => console.log("server running on port:" + 8000));
-const { Server } = require("socket.io");
-const io = new Server(server);
+const io = require("socket.io")();
 
 io.listen(server);
 
