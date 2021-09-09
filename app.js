@@ -1,18 +1,9 @@
-var express = require('express');
-
 var app = express();
+var http = require( "http" ).createServer( app );
+var io = require( "socket.io" )( http );
+http.listen(8080, "https://distance-love.herokuapp.com/");
 
-const server = require("http").createServer(app);
-const io = require("socket.io")()
 
-io.listen(server);
-
-io.on("connection", socket => {
-  socket.on("touch heart", msg => {
-    console.log(msg);
-  });
+io.on('connection',function(socket){  
+    console.log("A user is connected");
 });
-
-server.listen(8000, () => console.log("server running on port:" + 8000));
-
-module.exports = app;
