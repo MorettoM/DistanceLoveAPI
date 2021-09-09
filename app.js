@@ -3,7 +3,8 @@ var express = require('express');
 var app = express();
 
 const server = require("http").createServer(app);
-const io = require("socket.io")(8080)
+const { Server } = require("socket.io");
+const io = new Server(server);
 
 io.listen(server);
 
