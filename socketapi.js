@@ -8,16 +8,16 @@ io.on( "connection", function( socket ) {
     socket.on("heart touch", msg => {
         switch (msg) {
             case 'marcos touched':
-                io.emit("marcos", msg);
+                io.emit('marcos touched', msg);
                 break;
             case 'marcos untouched':
-                io.emit("untouched", msg);
+                io.emit("marcos untouched", msg);
                 break;
             case 'nacho touched':
-                io.emit("touched", msg);
+                io.emit("nacho touched", msg);
                 break;
             case 'nacho untouched':
-                io.emit("untouched", msg);
+                io.emit("nacho untouched", msg);
                 break;
            default:
                 break;
