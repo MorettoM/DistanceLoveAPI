@@ -44,10 +44,8 @@ app.use(function(err, req, res, next) {
 io.listen(server);
 
 io.on("connection", socket => {
-  console.log("a user connected :D");
-  socket.on("chat message", msg => {
+  socket.on("touch heart", msg => {
     console.log(msg);
-    io.emit("chat message", msg);
   });
 });
 
