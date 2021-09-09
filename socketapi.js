@@ -5,7 +5,7 @@ const socketapi = {
 
 // Add your socket.io logic here!
 io.on( "connection", function( socket ) {
-    console.log('User connected', socked.id)
+    console.log('User connected', socket.id)
     socket.on("heart touch", msg => {
         switch (msg) {
             case 'marcos touched':
