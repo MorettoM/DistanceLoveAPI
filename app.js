@@ -9,6 +9,7 @@ const io = new Server(server);
 io.listen(server);
 
 io.on("connection", socket => {
+  console.log('user connected')
   socket.on("touch heart", msg => {
     console.log(msg);
   });
